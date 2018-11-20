@@ -1,12 +1,35 @@
 .box {
     color: #000;  
     background: white;
-    padding: 15px;
+    padding: 20px;
     border-radius: 10px;
     min-width: 150px;
     display: flex;
     align-items: center;
-    elevation: 10; 
+    margin-left: -10px;
+    margin-top: -10px; 
+}
 
- 
-} 
+.boxRed {
+    color: #000;  
+    background-color: red; 
+    padding: 20px;
+    border-radius: 10px;
+    min-width: 300px;
+    display: flex;
+    align-items: center;
+    margin-left: -10px;
+    margin-top: -10px; 
+    elevation: 1000; 
+}
+
+.img {
+    max-width: 150px;
+    max-height: 150px;
+}
+
+@for $i from 1 through 50  { 
+    .elevation#{$i} {
+        elevation: $i; 
+    } 
+}
