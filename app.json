@@ -1,0 +1,10 @@
+{
+  "name": "testProject",
+  "displayName": "testProject",
+  "expo": {
+    "packagerOpts": {
+      "sourceExts": ["ts", "tsx", "scss", "sass"],
+      "transformer": "node_modules/react-native-sass-transformer/index.js"
+    }
+  }
+}
