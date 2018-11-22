@@ -1,14 +1,12 @@
 
 import React, {Component} from 'react'; 
 import {View, Text, Animated, Easing, Image} from 'react-native'; 
-
-import img from '~/assets/img.jpg';
+ 
 import styles from './styles.scss';  
 
 import { Style } from '~/utils';
-const style = (new Style(styles)).style; 
-
-console.log('>>>------------->', styles);
+import ConfettiView from '../ConfettiView';
+const style = (new Style(styles)).style;  
   
 
 export default class TestComponent extends Component {  
@@ -26,8 +24,7 @@ export default class TestComponent extends Component {
             easing: Easing.linear
         }).start( () => {
             this.rotateAnimation.setValue(0);
-            this.animate();
-            console.log('>>>-------------> START', )
+            this.animate(); 
         });
     }
 
@@ -49,16 +46,20 @@ export default class TestComponent extends Component {
     }
 
     render () { 
-        return (<>
-                <View {...style(`box elevation10`)} ><Text>HOLA</Text></View>
-                <View {...style(`box elevation10`)} ><Text>HOLA</Text></View>
-                <Animated.View {...this.boxAnimatedStyle} >
-                    {/* <Image{...style(`img`)} source={img}/> */}
+        return (
+            <ConfettiView style={{
+                position: 'absolute',
+                top: 0,
+                left: 0,
+                width: '100%',
+                height: '100%', 
+            }}>
+                {/* <View {...style(`box elevation10`)} ><Text>HOLA</Text></View>  */}
+                {/* <Animated.View {...this.boxAnimatedStyle} >
+                    <Image{...style(`img`)} source={img}/>
                     <Text>HOLA</Text>
-                </Animated.View>
-                <View {...style(`box elevation10`)} ><Text>HOLA</Text></View>
-                <View {...style(`box elevation10`)} ><Text>HOLA</Text></View> 
-            </>
+                </Animated.View> */}  
+            </ConfettiView>
         );
     }
 }
